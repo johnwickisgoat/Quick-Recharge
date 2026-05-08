@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <title>QuickRecharge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ══════════════════════════════════
+       SCREEN 1: HOME
+  ══════════════════════════════════ -->
+  <div id="screen-home" class="screen active">
+    <div class="top-bar">
+      <button class="icon-btn profile-btn" aria-label="Profile">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </button>
+      <div class="brand brand-center">
+        <div class="brand-icon">पे</div>
+        <span class="brand-name">PhonePe</span>
+      </div>
+      <button class="icon-btn" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+      </button>
+    </div>
+
+    <div class="hero-section">
+      <div class="hero-badge">⚡ Instant Recharge</div>
+      <h1 class="hero-title">Recharge<br><span class="accent">Smarter.</span></h1>
+      <p class="hero-sub">Real plans. Real prices. Delivered in seconds.</p>
+      <div class="operators-strip">
+        <span class="op-pill jio">Jio</span>
+        <span class="op-pill airtel">Airtel</span>
+        <span class="op-pill vi">Vi</span>
+        <span class="op-pill bsnl">BSNL</span>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <p class="form-label">Network Provider</p>
+      <div class="op-grid" id="op-grid">
+        <div class="op-item selected" data-op="Jio">
+          <div class="op-dot"></div><span>Jio</span>
+        </div>
+        <div class="op-item" data-op="Airtel">
+          <div class="op-dot"></div><span>Airtel</span>
+        </div>
+        <div class="op-item" data-op="Vi">
+          <div class="op-dot"></div><span>Vi</span>
+        </div>
+        <div class="op-item" data-op="BSNL">
+          <div class="op-dot"></div><span>BSNL</span>
+        </div>
+      </div>
+
+      <p class="form-label">Mobile Number</p>
+      <div class="phone-input-wrap">
+        <span class="country-code">🇮🇳 +91</span>
+        <input type="tel" id="phone-input" placeholder="Enter 10-digit number" maxlength="10" pattern="[0-9]{10}">
+      </div>
+      <div id="phone-error" class="error-text" style="display:none;">Please enter a valid 10-digit number</div>
+
+      <button id="btn-proceed" class="btn-primary">
+        View Plans <span class="btn-arrow">→</span>
+      </button>
+
+      <div class="secure-note phonepe-note">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Secure by PhonePe
+      </div>
+    </div>
+
+    <!-- Trust Badges Section -->
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <div class="trust-icon">👥</div>
+        <div class="trust-label">100K+ Users</div>
+        <div class="trust-sub">Trusted by 100K+ users</div>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-icon">⭐</div>
+        <div class="trust-label">4.8★ Rating</div>
+        <div class="trust-sub">From 20K+ reviews</div>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-icon">✓</div>
+        <div class="trust-label">Verified App</div>
+        <div class="trust-sub">Certified genuine</div>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-icon">🔒</div>
+        <div class="trust-label">ISO 27001</div>
+        <div class="trust-sub">Security certified</div>
+      </div>
+    </div>
+
+    <div class="phonepe-footer">
+      <div class="phonepe-logo">पे</div>
+      <div>
+        <div class="phonepe-footer-title">PhonePe</div>
+        <div class="phonepe-footer-sub">Fast, secure mobile recharge</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SCREEN 2: PLANS
+  ══════════════════════════════════ -->
+  <div id="screen-plans" class="screen">
+    <div class="top-bar">
+      <button class="icon-btn" id="btn-back-plans" aria-label="Back">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      </button>
+      <div class="brand">
+        <div class="brand-icon plans-logo" style="width:26px;height:26px;font-size:13px;">पे</div>
+        <span class="brand-name plans-name" style="font-size:16px;">QuickRecharge</span>
+      </div>
+      <div style="width:32px;"></div>
+    </div>
+
+    <div class="plans-guideline">
+      <div class="guideline-left">Recharge guideline: choose one plan carefully before proceeding.</div>
+      <div class="guideline-right">Per user one time only.</div>
+    </div>
+    <div class="acct-strip">
+      <div class="acct-left">
+        <div class="acct-avatar" id="acct-avatar">J</div>
+        <div>
+          <div class="acct-number" id="acct-number">9876543210</div>
+          <div class="acct-op" id="acct-op">Jio Prepaid</div>
+        </div>
+      </div>
+      <button class="btn-change" id="btn-change">Change</button>
+    </div>
+
+    <div class="offer-bar">
+      <div class="live-dot-wrap"><div class="live-dot"></div><span>LIVE</span></div>
+      <span>Special offer ends in</span>
+      <span class="countdown" id="countdown">14:59</span>
+    </div>
+
+    <div class="plans-tabs">
+      <button class="ptab active" data-tab="popular">Popular</button>
+      <button class="ptab" data-tab="data">Data</button>
+      <button class="ptab" data-tab="yearly">Yearly</button>
+    </div>
+
+    <div class="plans-list" id="plans-list">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SCREEN 3: PAYMENT SUCCESS
+  ══════════════════════════════════ -->
+  <div id="screen-success" class="screen">
+    <div class="success-wrap">
+      <div class="success-icon">✓</div>
+      <h2 class="success-title">Recharge Successful!</h2>
+      <p class="success-sub">Your recharge has been processed instantly.</p>
+
+      <div class="receipt-card">
+        <div class="receipt-row">
+          <span class="rl">Operator</span>
+          <span class="rv" id="rec-op">Jio</span>
+        </div>
+        <div class="receipt-row">
+          <span class="rl">Mobile</span>
+          <span class="rv" id="rec-phone">9876543210</span>
+        </div>
+        <div class="receipt-row">
+          <span class="rl">Amount Paid</span>
+          <span class="rv" id="rec-amount">₹299</span>
+        </div>
+        <div class="receipt-row">
+          <span class="rl">Validity</span>
+          <span class="rv" id="rec-validity">84 days</span>
+        </div>
+        <div class="receipt-row">
+          <span class="rl">Status</span>
+          <span class="rv" style="color:#16a34a;font-weight:600;">Active ✓</span>
+        </div>
+        <div class="receipt-row">
+          <span class="rl">Transaction ID</span>
+          <span class="rv" id="rec-txn" style="font-size:11px;color:#888;">QR2024XXXXXXX</span>
+        </div>
+      </div>
+
+      <button class="btn-primary" id="btn-done" style="margin-top:20px;">Recharge Again</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Plan Detail Modal -->
+<div id="plan-modal" class="modal-backdrop">
+  <div class="modal-sheet">
+    <button class="modal-close" id="modal-close">✕</button>
+
+    <div class="modal-price" id="modal-price">₹299</div>
+    <div class="modal-operator" id="modal-operator">Jio Prepaid</div>
+
+    <div class="modal-features">
+      <div class="modal-feat-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        <span id="modal-voice">Unlimited Calls</span>
+      </div>
+      <div class="modal-feat-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 6l10.5 7L22 6"/><rect x="1" y="4" width="22" height="16" rx="2"/></svg>
+        <span id="modal-sms">100 SMS/day</span>
+      </div>
+      <div class="modal-feat-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="5" width="22" height="14" rx="2"/><path d="M1 10h22"/></svg>
+        <span id="modal-validity">84 Days Validity</span>
+      </div>
+      <div class="modal-feat-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/></svg>
+        <span id="modal-data">2 GB/day 5G Data</span>
+      </div>
+    </div>
+
+    <div class="modal-benefits-section">
+      <div class="modal-benefits-header" id="modal-benefits-toggle">
+        <span id="modal-benefits-count">4 MORE REWARDS</span>
+        <svg id="benefits-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="modal-benefits-list" id="modal-benefits-list">
+        <!-- injected by JS -->
+      </div>
+    </div>
+
+    <button class="modal-recharge-btn" id="modal-recharge-btn">RECHARGE NOW</button>
+  </div>
+</div>
+
+<!-- Loading Overlay -->
+<div id="loading-overlay" class="overlay-full">
+  <div class="loader-box">
+    <div class="spinner"></div>
+    <p id="loader-msg">Fetching Plans...</p>
+  </div>
+</div>
+
+<!-- Payment Processing Overlay -->
+<div id="payment-overlay" class="overlay-full">
+  <div class="loader-box">
+    <div class="spinner"></div>
+    <p>Opening Razorpay...</p>
+    <span style="font-size:12px;color:#aaa;margin-top:4px;">Do not press back</span>
+  </div>
+</div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+<!-- Razorpay -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script src="app.js"></script>
+</body>
+</html>
